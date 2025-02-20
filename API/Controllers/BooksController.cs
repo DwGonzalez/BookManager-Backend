@@ -38,7 +38,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateBook([FromBody] CreateOrUpdateDto createBookDto)
+        public async Task<IActionResult> CreateBook([FromBody] BookCreateOrUpdateDto createBookDto)
         {
             if (createBookDto == null)
             {
@@ -58,7 +58,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook(int id, [FromBody] CreateOrUpdateDto updateBookDto)
+        public async Task<IActionResult> UpdateBook(int id, [FromBody] BookCreateOrUpdateDto updateBookDto)
         {
             if (updateBookDto == null)
             {

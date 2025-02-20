@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.Book
 {
-    public class CreateOrUpdateDto
+    public class BookCreateOrUpdateDto
     {
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

@@ -12,8 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(BookProfile));
+builder.Services.AddAutoMapper(typeof(AuthorProfile));
 
 builder.Services.AddHttpClient<IBookService, BookService>();
+builder.Services.AddHttpClient<IAuthorService, AuthorService>();
 
 var app = builder.Build();
 

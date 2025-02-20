@@ -60,7 +60,5 @@ namespace Infraestructure.Services
 
             return response.IsSuccessStatusCode;
         }
-
-
     }
 }

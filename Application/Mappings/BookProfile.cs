@@ -8,7 +8,7 @@ namespace Application.Mappings
     {
         public BookProfile() {
             CreateMap<Book, BookDto>().ReverseMap();
-            CreateMap<BookDto, CreateOrUpdateDto>().ReverseMap();
+            CreateMap<BookDto, BookCreateOrUpdateDto>().ReverseMap();
         }
     }
 }
