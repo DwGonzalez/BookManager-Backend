@@ -17,6 +17,14 @@ builder.Services.AddAutoMapper(typeof(AuthorProfile));
 builder.Services.AddHttpClient<IBookService, BookService>();
 builder.Services.AddHttpClient<IAuthorService, AuthorService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AngularApp", policy => policy.WithOrigins("http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AngularApp");
 
 app.UseHttpsRedirection();
 
